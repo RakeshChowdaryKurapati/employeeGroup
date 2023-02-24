@@ -1,0 +1,25 @@
+{
+	"Employees": [
+		{
+			"firstName": "Romin",
+			"lastName": "Irani",
+			"email": "romin.k.irani@gmail.com",
+			"marritalStatus": "yes",
+			"salary": 60000
+		},
+		{
+			"firstName": "Neil",
+			"lastName": "Irani",
+			"email": "neilrirani@gmail.com",
+			"marritalStatus": "yes",
+			"salary": 80000
+		},
+		{
+			"firstName": "Rakesh",
+			"lastName": "Naidu",
+			"email": "rakeshchowdarykurapati@gmail.com",
+			"maritalStatus": "no",
+			"salary": 88000
+		}
+	]
+}
