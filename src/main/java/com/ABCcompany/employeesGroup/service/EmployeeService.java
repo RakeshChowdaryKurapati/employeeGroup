@@ -6,7 +6,7 @@ import com.ABCcompany.employeesGroup.model.Employee;
 
 public interface EmployeeService {
 
-	Employee saveEmployee(Employee employee);
+	Employee save(Employee employee);
 	List<Employee> getAllEmployees();
 	
 	List<Employee> getFilteredEmployees(String married, Integer salary);

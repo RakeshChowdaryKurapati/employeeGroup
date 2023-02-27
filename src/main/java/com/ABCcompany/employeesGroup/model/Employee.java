@@ -9,16 +9,26 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 @JsonIgnoreProperties
+@AllArgsConstructor
 @Data
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode
+@Builder
 @Entity
 @Table(name="Employees")
 public class Employee {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	@Column(name = "first_name")
 	private String firstName;
 	@Column(name="last_name")
@@ -28,7 +38,9 @@ public class Employee {
 	@Column(name = "marital_status")
 	private String maritalStatus;
 	@Column(name = "salary")
-	private int salary;
+	private Integer salary;
+	
+	
 	public String getMaritalStatus() {
 		return maritalStatus;
 	}
@@ -57,10 +69,13 @@ public class Employee {
 	public long getId() {
 	    return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 	    this.id = id;
 	}
+
+}
+
 	
 	
 
-}
+

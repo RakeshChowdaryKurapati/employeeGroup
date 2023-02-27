@@ -3,6 +3,7 @@ package com.ABCcompany.employeesGroup.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -13,6 +14,7 @@ import com.ABCcompany.employeesGroup.service.EmployeeService;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
+	@Autowired
 	private EmployeeRepository  employeeRepository;
 	
 	
@@ -23,11 +25,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
 	@Override
-	public Employee saveEmployee(Employee employee) {
+	public Employee save(Employee employee) {
 		
-		return employeeRepository.save(employee);
+		Employee emp = employeeRepository.save(employee);
+		return emp;
 	}
-
+	
 
 	@Override
 	public  List<Employee> getAllEmployees() {
@@ -40,7 +43,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	        @RequestParam( required = false) Integer salary)
 	    {
 		EmployeeServiceImpl employeeService = new EmployeeServiceImpl(employeeRepository);
-	List<Employee> employees =employeeService.getAllEmployees();
+	    List<Employee> employees =employeeService.getAllEmployees();
 	        List<Employee> filteredEmployees = new ArrayList<>();
 	        
 	        if(married == null && salary == 0) {
@@ -85,14 +88,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	      
 	    }  return filteredEmployees;
 	    }
-public boolean isSalariedAndIsMarritalStatus(Employee e, String salaried, String married) {
 
-	boolean flag = false;
-	
-	
-	return flag;
-	
-}
 	
 }
 
